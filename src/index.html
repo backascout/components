@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/covid-info.esm.js"></script>
+    <script nomodule src="/build/covid-info.js"></script>
+
+    <link rel="stylesheet" href="https://nykarwebb.se/app/themes/karwebb/assets/dist/style.min.css?ver=2.1">
+    <link rel="stylesheet" href="https://nykarwebb.se/wp-includes/css/dist/block-library/style.min.css?ver=5.7.1">
+  </head>
+  <body>
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <div class="row justify-content-center">
+          <article class="entry-content component-columns--column col-12 col-lg no-margin component-text">
+            <p>
+              <covid-posts host="https://backa.scout.se"></covid-posts>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

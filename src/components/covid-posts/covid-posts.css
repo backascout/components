@@ -1,0 +1,25 @@
+.covid-posts__spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+
+.covid-posts__posts {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .covid-posts__posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .covid-posts__posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
