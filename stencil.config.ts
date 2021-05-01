@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'covid-info',
+  namespace: 'components',
   outputTargets: [
     {
       type: 'dist',
