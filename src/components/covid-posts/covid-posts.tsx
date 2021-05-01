@@ -54,9 +54,13 @@ export class CovidPosts {
       .then(checkStatus)
       .then(parseJSON)
       .then((posts: Post[]) => {
-        this.posts = posts.filter(post => post.content.rendered.includes('<script type="text/javascript" class="covid-news"></script>'));
+        this.posts = posts.filter(post =>
+          post.content.rendered.includes(
+            '<script type="text/javascript" class="covid-news"></script>',
+          ),
+        );
       })
-      .catch((error) => {
+      .catch(error => {
         this.postsFetchError = error;
       })
       .finally(() => {
@@ -68,11 +72,11 @@ export class CovidPosts {
     return (
       <Host>
         <div class="covid-posts">
-          {this.postsLoading &&
+          {this.postsLoading && (
             <div class="covid-posts__spinner">
               <loading-spinner></loading-spinner>
             </div>
-          }
+          )}
           {!this.postsLoading && (
             <section class="covid-posts__posts">
               {this.posts.map(post => (

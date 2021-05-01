@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface CovidAlert {
+        "body": string;
+        "heading": string;
+        "linkHref"?: string;
+        "linkText"?: string;
+    }
     interface CovidPost {
         "host": string;
         "postExcerpt": string;
@@ -20,6 +26,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCovidAlertElement extends Components.CovidAlert, HTMLStencilElement {
+    }
+    var HTMLCovidAlertElement: {
+        prototype: HTMLCovidAlertElement;
+        new (): HTMLCovidAlertElement;
+    };
     interface HTMLCovidPostElement extends Components.CovidPost, HTMLStencilElement {
     }
     var HTMLCovidPostElement: {
@@ -39,12 +51,19 @@ declare global {
         new (): HTMLLoadingSpinnerElement;
     };
     interface HTMLElementTagNameMap {
+        "covid-alert": HTMLCovidAlertElement;
         "covid-post": HTMLCovidPostElement;
         "covid-posts": HTMLCovidPostsElement;
         "loading-spinner": HTMLLoadingSpinnerElement;
     }
 }
 declare namespace LocalJSX {
+    interface CovidAlert {
+        "body"?: string;
+        "heading"?: string;
+        "linkHref"?: string;
+        "linkText"?: string;
+    }
     interface CovidPost {
         "host"?: string;
         "postExcerpt"?: string;
@@ -58,6 +77,7 @@ declare namespace LocalJSX {
     interface LoadingSpinner {
     }
     interface IntrinsicElements {
+        "covid-alert": CovidAlert;
         "covid-post": CovidPost;
         "covid-posts": CovidPosts;
         "loading-spinner": LoadingSpinner;
@@ -67,6 +87,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "covid-alert": LocalJSX.CovidAlert & JSXBase.HTMLAttributes<HTMLCovidAlertElement>;
             "covid-post": LocalJSX.CovidPost & JSXBase.HTMLAttributes<HTMLCovidPostElement>;
             "covid-posts": LocalJSX.CovidPosts & JSXBase.HTMLAttributes<HTMLCovidPostsElement>;
             "loading-spinner": LocalJSX.LoadingSpinner & JSXBase.HTMLAttributes<HTMLLoadingSpinnerElement>;
