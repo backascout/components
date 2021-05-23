@@ -50,7 +50,7 @@ export class CovidPosts {
   fetchPosts() {
     this.postsLoading = true;
 
-    fetch(`${this.host}/wp-json/wp/v2/posts?_fields=id,content,excerpt,featured_media,title,link`)
+    fetch(`${this.host}/wp-json/wp/v2/posts?_fields=id,content,excerpt,featured_media,title,link&search=covid-news&per_page=100`)
       .then(checkStatus)
       .then(parseJSON)
       .then((posts: Post[]) => {
