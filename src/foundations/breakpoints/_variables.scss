@@ -1,0 +1,26 @@
+$breakpoints: () !default;
+
+$backascout-breakpoint-small: 0;
+$backascout-breakpoint-medium: 600px;
+$backascout-breakpoint-large: 1024px;
+$backascout-breakpoint-xlarge: 1440px;
+
+$backascout-fluid-breakpoint-medium: 600px;
+$backascout-fluid-breakpoint-xlarge: 1440px;
+
+$breakpoints: map-merge(
+  (
+    'sm': $backascout-breakpoint-small,
+    'md': $backascout-breakpoint-medium,
+    'lg': $backascout-breakpoint-large,
+    'xl': $backascout-breakpoint-xlarge,
+  ),
+  $breakpoints
+);
+
+$extract: (
+  'breakpoint-sm': map-get($breakpoints, 'sm'),
+  'breakpoint-md': map-get($breakpoints, 'md'),
+  'breakpoint-lg': map-get($breakpoints, 'lg'),
+  'breakpoint-xl': map-get($breakpoints, 'xl'),
+);

@@ -1,0 +1,228 @@
+@import 'variables';
+@import 'breakpoints/mixins';
+@import 'breakpoints/variables';
+
+:root {
+  font-size: 62.5% !important;
+}
+
+@mixin backascout-typography($type, $weight) {
+  // Set font-family
+  @if map_has_key($typography, $type) {
+    font-family: map-get($typography, $type);
+  } @else {
+    @error 'Unknown typography #{$type}';
+  }
+
+  // Set font-weight
+  // First check that typography exists
+  @if map_has_key($font-weight, $type) {
+    $weight-map: map-get($font-weight, $type);
+
+    // Check that typography has certain font-weight possibility
+    @if map_has_key($weight-map, $weight) {
+      font-weight: map-get($weight-map, $weight);
+    } @else {
+      @error 'Unknown font-weight for typography #{$type}';
+    }
+  } @else {
+    @error 'Unknown typography for font-weight #{$type}';
+  }
+}
+
+/// Responsive font sizing. The size of the font will scale with the viewport
+/// based on the information that you provide it.
+///
+/// @param {length} $font-size-min
+/// @param {length} $font-size-max
+/// @param {length} $vw-min - [$backascout-fluid-breakpoint-medium] the minimum viewport width
+/// @param {length} $vw-max - [$backascout-fluid-breakpoint-xlarge] the maximum viewport width
+///
+/// @require {function} strip-unit
+///
+/// @example
+/// See typography story or readme.
+///
+/// Concept of precise control from Mike Riethmuller
+/// https://madebymike.com.au/writing/precise-control-responsive-typography/
+///
+/// Original mixin implementation from Indrek Paas
+/// http://www.sassmeister.com/gist/7f22e44ace49b5124eec
+///
+@mixin backascout-fluid-type(
+  $font-size-min,
+  $font-size-max,
+  $vw-min: $backascout-fluid-breakpoint-medium,
+  $vw-max: $backascout-fluid-breakpoint-xlarge,
+) {
+  @if (
+    unitless($font-size-min) or
+    unitless($font-size-max) or
+    unitless($vw-min) or
+    unitless($vw-max)
+  ) {
+    @error "All min and max properties must be provided with a unit (e.g.: px)";
+  }
+
+  @if (
+    unit($font-size-min) ==
+      unit($font-size-max) and
+      unit($font-size-min) ==
+      unit($vw-min) and
+      unit($font-size-min) ==
+      unit($vw-max)
+  ) {
+    font-size: $font-size-min;
+
+    @include backascout-breakpoint(md) {
+      font-size: calc(
+        #{$font-size-min} +
+        #{strip-unit($font-size-max - $font-size-min)} *
+        (100vw - #{$vw-min}) /
+        #{strip-unit($vw-max - $vw-min)}
+      );
+    }
+
+    @include backascout-breakpoint(xl) {
+      font-size: $font-size-max;
+    }
+  } @else {
+    @error 'Incompatible units were passed:#{unit($font-size-min)}, #{unit($font-size-max)}, #{unit($vw-min)},#{unit($vw-max)}';
+  }
+}
+
+/// Generate font size that is not fluid.
+///
+/// @param {length} $font-size - the desired font size
+///
+@mixin backascout-static-type($font-size) {
+  @if (unitless($font-size)) {
+    @error 'Size must be provided with a unit';
+  }
+
+  font-size: $font-size;
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+///
+/// Original implementation by Miriam Suzanne
+/// http://stackoverflow.com/a/12335841/1339786
+///
+/// Update implementation from Hugo Giraudel
+/// https://css-tricks.com/snippets/sass/strip-unit-function/
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@mixin backascout-paragraph-100() {
+  @include backascout-typography('default', 'normal');
+  @include backascout-static-type(16px);
+  line-height: 1.5;
+}
+
+@mixin backascout-paragraph-200() {
+  @include backascout-typography('default', 'normal');
+  @include backascout-static-type(16px);
+  line-height: 1.75;
+}
+
+@mixin backascout-preamble-100() {
+  @include backascout-typography('default', 'normal');
+  @include backascout-static-type(20px);
+  line-height: 1.5;
+}
+
+@mixin backascout-preamble-200() {
+  @include backascout-typography('default', 'normal');
+  @include backascout-fluid-type(20px, 24px);
+  line-height: 1.5;
+}
+
+@mixin backascout-additional-100() {
+  @include backascout-typography('default', 'normal');
+  @include backascout-static-type(14px);
+  line-height: 1.5;
+}
+
+@mixin backascout-subsection() {
+  @include backascout-typography('default', 'medium');
+  @include backascout-static-type(16px);
+  line-height: 1.25;
+}
+
+@mixin backascout-overline-100() {
+  @include backascout-typography('default', 'medium');
+  @include backascout-static-type(14px);
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@mixin backascout-overline-200() {
+  @include backascout-typography('default', 'medium');
+  @include backascout-fluid-type(14px, 16px);
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@mixin backascout-title-100() {
+  @include backascout-typography('default', 'bold');
+  @include backascout-fluid-type(16px, 20px);
+  line-height: 1.25;
+}
+
+@mixin backascout-title-200 {
+  @include backascout-typography('default', 'bold');
+  @include backascout-fluid-type(20px, 24px);
+  line-height: 1.25;
+}
+
+@mixin backascout-title-300 {
+  @include backascout-typography('default', 'bold');
+  @include backascout-fluid-type(24px, 32px);
+  line-height: 1.25;
+}
+
+@mixin backascout-title-400 {
+  @include backascout-typography('default', 'bold');
+  @include backascout-fluid-type(28px, 40px);
+  line-height: 1.25;
+}
+
+@mixin backascout-title-500 {
+  @include backascout-typography('default', 'bold');
+  @include backascout-fluid-type(32px, 48px);
+  line-height: 1;
+}
+
+@mixin backascout-title-600 {
+  @include backascout-typography('default', 'bold');
+  @include backascout-fluid-type(36px, 56px);
+  line-height: 1;
+}
+
+@mixin backascout-title-700 {
+  @include backascout-typography('default', 'bold');
+  @include backascout-fluid-type(40px, 64px);
+  line-height: 1;
+}
+
+@mixin backascout-title-800 {
+  @include backascout-typography('display', 'normal');
+  @include backascout-fluid-type(40px, 64px);
+  line-height: 1;
+}
+
+@mixin backascout-title-900 {
+  @include backascout-typography('display', 'normal');
+  @include backascout-fluid-type(48px, 80px);
+  line-height: 1;
+}

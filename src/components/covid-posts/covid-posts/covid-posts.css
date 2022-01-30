@@ -6,7 +6,7 @@
   height: 25vh;
 }
 
-.covid-posts__posts {
+/* .covid-posts__posts {
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 40px;
@@ -22,4 +22,4 @@
   .covid-posts__posts {
     grid-template-columns: repeat(3, 1fr);
   }
-}
+} */

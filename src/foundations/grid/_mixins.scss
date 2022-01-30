@@ -1,0 +1,107 @@
+@import 'variables';
+@import 'breakpoints/mixins';
+@import 'breakpoints/variables';
+
+/* Grid mixins */
+
+@mixin validate-col-numbers($noOfCols) {
+  @if not(type-of($noOfCols) == 'number') {
+    @error 'Invalid col value type "#{type-of($noOfCols)}"';
+  }
+  @if ($noOfCols < 1 or $noOfCols > 12) {
+    @error 'Invalid col value #{$noOfCols}, col number should be from 1 to 12';
+  }
+}
+
+@mixin backascout-grid {
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $backascout-fluid-breakpoint-xlarge;
+  padding: 0 $page-padding;
+  width: 100%;
+
+  @include backascout-breakpoint(md) {
+    padding: 0 $page-padding-m;
+  }
+  @include backascout-breakpoint(lg) {
+    padding: 0 $page-padding-l;
+  }
+  @include backascout-breakpoint(xl) {
+    padding: 0 $page-padding-xl;
+  }
+}
+
+@mixin backascout-row {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-left: -$gutter / 2;
+  margin-right: -$gutter / 2;
+
+  @include backascout-breakpoint(md) {
+    margin-left: -$gutter-medium / 2;
+    margin-right: -$gutter-medium / 2;
+  }
+  @include backascout-breakpoint(lg) {
+    margin-left: -$gutter-large / 2;
+    margin-right: -$gutter-large / 2;
+  }
+}
+
+//noOfCols = the number of columns you want the column to be
+@mixin backascout-col($noOfCols: 1) {
+  @include validate-col-numbers($noOfCols);
+  box-sizing: border-box;
+  display: block;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+  width: calc(((100% - 1px) / #{$columns}) * #{$noOfCols});
+
+  @include backascout-breakpoint(md) {
+    padding-left: $gutter-medium / 2;
+    padding-right: $gutter-medium / 2;
+  }
+  @include backascout-breakpoint(lg) {
+    padding-left: $gutter-large / 2;
+    padding-right: $gutter-large / 2;
+  }
+}
+
+@mixin backascout-col-md($noOfCols: 1) {
+  @include backascout-breakpoint(md) {
+    @include validate-col-numbers($noOfCols);
+    width: calc(((100% - 1px) / #{$columns}) * #{$noOfCols});
+  }
+}
+
+@mixin backascout-col-lg($noOfCols: 1) {
+  @include backascout-breakpoint(lg) {
+    @include validate-col-numbers($noOfCols);
+    width: calc(((100% - 1px) / #{$columns}) * #{$noOfCols});
+  }
+}
+
+@mixin backascout-grid-hide-up($breakpoint: null) {
+  @if not map_has_key($breakpoints, $breakpoint) {
+    @error 'Unknown breakpoint option "#{$breakpoint}"';
+  } @else {
+    @include backascout-breakpoint($breakpoint) {
+      display: none;
+    }
+  }
+}
+
+@mixin backascout-grid-hide-down($breakpoint: null) {
+  display: none;
+
+  @if not map_has_key($breakpoints, $breakpoint) {
+    @error 'Unknown breakpoint option "#{$breakpoint}"';
+  } @else {
+    @include backascout-breakpoint($breakpoint) {
+      display: block;
+    }
+  }
+}

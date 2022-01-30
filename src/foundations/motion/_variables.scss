@@ -1,0 +1,34 @@
+// Variables for duration
+$backascout-duration-50: 50ms;
+$backascout-duration-100: 100ms;
+$backascout-duration-150: 150ms;
+$backascout-duration-200: 200ms;
+$backascout-duration-250: 250ms;
+$backascout-duration-300: 300ms;
+$backascout-duration-350: 350ms;
+$backascout-duration-400: 400ms;
+$backascout-duration-500: 500ms;
+$backascout-duration-1000: 1000ms;
+$backascout-duration-1500: 1500ms;
+
+// Variables for easing/timing functions
+$backascout-ease-in: cubic-bezier(0.35, 0.07, 0.88, 0.43);
+$backascout-ease-out: cubic-bezier(0.33, 0.9, 0.75, 0.95);
+$backascout-ease-in-out: cubic-bezier(0.45, 0, 0.52, 0.98);
+
+$extract: (
+  'duration-50': $backascout-duration-50,
+  'duration-100': $backascout-duration-100,
+  'duration-150': $backascout-duration-150,
+  'duration-200': $backascout-duration-200,
+  'duration-250': $backascout-duration-250,
+  'duration-300': $backascout-duration-300,
+  'duration-350': $backascout-duration-350,
+  'duration-400': $backascout-duration-400,
+  'duration-500': $backascout-duration-500,
+  'duration-1000': $backascout-duration-1000,
+  'duration-1500': $backascout-duration-1500,
+  'ease-in': $backascout-ease-in,
+  'ease-out': $backascout-ease-out,
+  'ease-in-out': $backascout-ease-in-out,
+);

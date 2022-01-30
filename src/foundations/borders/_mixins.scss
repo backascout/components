@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'colors/variables';
+
+@mixin backascout-border-radius($type) {
+  @if map_has_key($border-radiuses, $type) {
+    border-radius: map-get($border-radiuses, $type);
+  } @else {
+    @error 'Unknown border radius type #{$type}';
+  }
+}
+
+@mixin backascout-border($color, $width: xs, $sides: all) {
+  // Check for unvalid attributes
+  @if not map_has_key($border-widths, $width) {
+    @error 'Unknown border width "#{$width}"';
+  }
+  @if not map_has_key($colors, $color) {
+    @error 'Unknown border color "#{$color}"';
+  }
+  @if not map_has_key($border-side-properties, $sides) {
+    @error 'Unknown border side option "#{$sides}"';
+  }
+
+  $width-value: map-get($border-widths, $width);
+  $style-value: solid;
+  $color-value: map-get($colors, $color);
+
+  // Set the border CSS property
+  #{map-get($border-side-properties, $sides)}: $width-value $style-value
+    $color-value;
+}

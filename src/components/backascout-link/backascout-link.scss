@@ -1,0 +1,80 @@
+@import 'borders/mixins';
+@import 'colors/mixins';
+@import 'focus/mixins';
+@import 'motion/variables';
+@import 'spacing/variables';
+@import 'typography/mixins';
+
+:host(.standalone) {
+  display: flex;
+}
+
+.backascout-link {
+  @include backascout-border-radius('default');
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color $backascout-duration-100 $backascout-ease-in-out,
+    background-color $backascout-duration-100 $backascout-ease-in-out;
+
+  &:visited {
+    @include backascout-color('blue-800');
+    @include backascout-bg-color('transparent');
+  }
+
+  &:hover {
+    @include backascout-color('blue-700');
+    @include backascout-bg-color('blue-200');
+  }
+
+  &:active {
+    @include backascout-color('blue-800');
+    @include backascout-bg-color('blue-200');
+  }
+
+  &:focus {
+    @include backascout-focus-outline;
+    outline-offset: 0;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  &--standalone {
+    @include backascout-paragraph-100();
+    @include backascout-color('blue-500');
+    align-items: center;
+    display: flex;
+  }
+
+  &--silent {
+    background-color: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    &:active {
+      background-color: inherit;
+      color: inherit;
+    }
+
+    &:focus {
+      @include backascout-border('white', xs, all);
+      @include backascout-focus-shadow;
+    }
+
+    &:hover {
+      background-color: inherit;
+      color: inherit;
+    }
+
+    // &:focus {
+    //   background-color: inherit;
+    //   color: inherit;
+
+    //   ::slotted(*) {
+    //     @include backascout-focus-outline;
+    //   }
+    // }
+  }
+}

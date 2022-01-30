@@ -1,0 +1,63 @@
+$border-radiuses: () !default;
+$border-widths: () !default;
+$border-side-properties: () !default;
+
+$backascout-border-radius-none: 0;
+$backascout-border-radius-2: 2px;
+$backascout-border-radius-full: 9990px;
+
+$backascout-border-width-0: 0;
+$backascout-border-width-1: 1px;
+$backascout-border-width-2: 2px;
+$backascout-border-width-3: 3px;
+$backascout-border-width-6: 6px;
+$backascout-border-width-8: 8px;
+$backascout-border-width-12: 12px;
+
+$border-radiuses: map-merge(
+  (
+    'none': $backascout-border-radius-none,
+    'default': $backascout-border-radius-2,
+    'full': $backascout-border-radius-full,
+  ),
+  $border-radiuses
+);
+
+$border-widths: map-merge(
+  (
+    'none': $backascout-border-width-0,
+    'xs': $backascout-border-width-1,
+    'sm': $backascout-border-width-2,
+    'md': $backascout-border-width-3,
+    'lg': $backascout-border-width-6,
+    'llg': $backascout-border-width-8,
+    'xl': $backascout-border-width-12,
+  ),
+  $border-widths
+);
+
+$border-side-properties: map-merge(
+  (
+    'all': 'border',
+    'top': 'border-top',
+    'right': 'border-right',
+    'bottom': 'border-bottom',
+    'left': 'border-left',
+  ),
+  $border-side-properties
+);
+
+$extract: map-merge(
+  (
+    'width-none': map-get($border-widths, 'none'),
+    'width-xs': map-get($border-widths, 'xs'),
+    'width-sm': map-get($border-widths, 'sm'),
+    'width-md': map-get($border-widths, 'md'),
+    'width-lg': map-get($border-widths, 'lg'),
+    'width-xl': map-get($border-widths, 'xl'),
+    'radius-none': map-get($border-radiuses, 'none'),
+    'radius-default': map-get($border-radiuses, 'default'),
+    'radius-full': map-get($border-radiuses, 'full'),
+  ),
+  $border-side-properties
+);

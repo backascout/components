@@ -1,0 +1,22 @@
+@import 'spacing/variables';
+
+$columns: 12;
+
+$gutter: $backascout-spacing-16;
+$gutter-medium: $backascout-spacing-24;
+$gutter-large: $backascout-spacing-24;
+
+$page-padding: $backascout-spacing-16 + ($gutter / 2);
+$page-padding-m: $backascout-spacing-24 + ($gutter-medium / 2);
+$page-padding-l: $backascout-spacing-48 + ($gutter-large / 2);
+$page-padding-xl: $backascout-spacing-64 + ($gutter-large / 2);
+
+$extract: (
+  'gutter': $gutter,
+  'gutter-medium': $gutter-medium,
+  'gutter-large': $gutter-large,
+  'page-padding': $page-padding,
+  'page-padding-m': $page-padding-m,
+  'page-padding-l': $page-padding-l,
+  'page-padding-xl': $page-padding-xl,
+);

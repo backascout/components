@@ -1,0 +1,42 @@
+@import 'borders/mixins';
+@import 'colors/mixins';
+@import 'motion/variables';
+
+.backascout-loader {
+  width: 96px;
+  height: 96px;
+  background-size: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: loader-logo-pulse $backascout-duration-1000 infinite alternate $backascout-ease-in-out;
+
+  &::after {
+    @include backascout-bg-color('scouterna');
+    @include backascout-border-radius('full');
+    content: '';
+    display: block;
+    width: 96px;
+    height: 96px;
+    animation: loader-pulse $backascout-duration-1000 infinite alternate $backascout-ease-out;
+  }
+}
+
+@keyframes loader-logo-pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes loader-pulse {
+  0% {
+    opacity: 0.75;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(1.5);
+  }
+}

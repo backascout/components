@@ -44,7 +44,7 @@ interface Media {
 
 @Component({
   tag: 'covid-post',
-  styleUrl: 'covid-post.css',
+  shadow: true,
 })
 export class CovidPost {
   @Prop({ reflect: true }) host: string;
@@ -57,7 +57,7 @@ export class CovidPost {
   @State() mediaLoading: boolean = false;
   @State() mediaFetchError: unknown = null;
 
-  componentDidLoad() {
+  componentWillLoad() {
     if (this.postMediaId) {
       this.fetchMedia(this.postMediaId);
     }
@@ -83,7 +83,16 @@ export class CovidPost {
   render() {
     return (
       <Host>
-        <article class="covid-post mb-5 post-card">
+        <backascout-blog-card
+          badge="Scoutkåren"
+          heading={this.postTitle}
+          href={this.postLink}
+          imageAlt=""
+          imageUrl={this.mediaURL}
+        >
+          <div innerHTML={this.postExcerpt}></div>
+        </backascout-blog-card>
+        {/* <article class="covid-post mb-5 post-card">
           <a href={this.postLink} class="d-flex post-card--wrapper h-100">
             <div class="d-flex flex-column justify-content-start post-card--inner w-100">
               {!this.mediaLoading && this.mediaURL && (
@@ -112,7 +121,7 @@ export class CovidPost {
               </figure>
             </div>
           </a>
-        </article>
+        </article> */}
       </Host>
     );
   }

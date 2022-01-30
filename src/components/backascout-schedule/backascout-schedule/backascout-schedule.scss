@@ -1,0 +1,18 @@
+@import 'spacing/variables';
+
+.backascout-schedule {
+  &__featured {
+    margin-bottom: $backascout-spacing-24;
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+
+  &__activities-alert {
+    margin-top: $backascout-spacing-12;
+  }
+}

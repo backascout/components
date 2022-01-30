@@ -1,0 +1,98 @@
+@import 'borders/mixins';
+@import 'colors/mixins';
+@import 'focus/mixins';
+@import 'spacing/variables';
+
+.backascout-tab-filter-option {
+  $block: &;
+
+  @include backascout-bg-color('transparent');
+  @include backascout-border('transparent', none);
+  @include backascout-border('transparent', sm, bottom);
+  width: auto;
+  cursor: pointer;
+  outline: none;
+  margin-left: $backascout-spacing-8;
+  padding: $backascout-spacing-4 $backascout-spacing-0;
+  white-space: nowrap;
+
+  &:focus {
+    @include backascout-focus-outline;
+
+    &:not(:focus-visible) {
+      outline: 0;
+    }
+  }
+
+  &:hover {
+    @include backascout-color('blue-500');
+
+    &#{$block}--scouterna {
+      @include backascout-color('scouterna');
+    }
+
+    &#{$block}--familjescouterna {
+      @include backascout-color('familjescouterna');
+    }
+
+    &#{$block}--spararna {
+      @include backascout-color('spararna');
+    }
+
+    &#{$block}--upptackarna {
+      @include backascout-color('upptackarna');
+    }
+
+    &#{$block}--aventyrarna {
+      @include backascout-color('aventyrarna');
+    }
+
+    &#{$block}--utmanarna {
+      @include backascout-color('utmanarna');
+    }
+
+    &#{$block}--rover {
+      @include backascout-color('rover');
+    }
+  }
+
+  &--selected {
+    @include backascout-color('blue-500');
+    @include backascout-border('blue-500', sm, bottom);
+
+    &#{$block}--scouterna {
+      @include backascout-color('scouterna');
+      @include backascout-border('scouterna', sm, bottom);
+    }
+
+    &#{$block}--familjescouterna {
+      @include backascout-color('familjescouterna');
+      @include backascout-border('familjescouterna', sm, bottom);
+    }
+
+    &#{$block}--spararna {
+      @include backascout-color('spararna');
+      @include backascout-border('spararna', sm, bottom);
+    }
+
+    &#{$block}--upptackarna {
+      @include backascout-color('upptackarna');
+      @include backascout-border('upptackarna', sm, bottom);
+    }
+
+    &#{$block}--aventyrarna {
+      @include backascout-color('aventyrarna');
+      @include backascout-border('aventyrarna', sm, bottom);
+    }
+
+    &#{$block}--utmanarna {
+      @include backascout-color('utmanarna');
+      @include backascout-border('utmanarna', sm, bottom);
+    }
+
+    &#{$block}--rover {
+      @include backascout-color('rover');
+      @include backascout-border('rover', sm, bottom);
+    }
+  }
+}

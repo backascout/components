@@ -1,0 +1,31 @@
+//Spacings
+
+$backascout-spacing-0: 0;
+$backascout-spacing-2: 2px;
+$backascout-spacing-4: 4px;
+$backascout-spacing-8: 8px;
+$backascout-spacing-12: 12px;
+$backascout-spacing-16: 16px;
+$backascout-spacing-20: 20px;
+$backascout-spacing-24: 24px;
+$backascout-spacing-32: 32px;
+$backascout-spacing-48: 48px;
+$backascout-spacing-64: 64px;
+$backascout-spacing-80: 80px;
+$backascout-spacing-96: 96px;
+
+$extract: (
+  'spacing-0': $backascout-spacing-0,
+  'spacing-2': $backascout-spacing-2,
+  'spacing-4': $backascout-spacing-4,
+  'spacing-8': $backascout-spacing-8,
+  'spacing-12': $backascout-spacing-12,
+  'spacing-16': $backascout-spacing-16,
+  'spacing-20': $backascout-spacing-20,
+  'spacing-24': $backascout-spacing-24,
+  'spacing-32': $backascout-spacing-32,
+  'spacing-48': $backascout-spacing-48,
+  'spacing-64': $backascout-spacing-64,
+  'spacing-80': $backascout-spacing-80,
+  'spacing-96': $backascout-spacing-96,
+);

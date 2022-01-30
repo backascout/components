@@ -1,0 +1,114 @@
+@import 'borders/mixins';
+@import 'colors/mixins';
+@import 'focus/mixins';
+@import 'motion/variables';
+@import 'spacing/variables';
+
+.backascout-accordion-item {
+  @include backascout-bg-color('transparent');
+  @include backascout-border('black', xs, bottom);
+
+  &__header {
+    @include backascout-border('transparent', none);
+    @include backascout-border('transparent', llg, left);
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    padding: $backascout-spacing-16;
+    padding-left: $backascout-spacing-8;
+    transition: background-color $backascout-duration-100 $backascout-ease-in;
+
+    &--default {
+      @include backascout-bg-color('transparent');
+
+      &:active,
+      &:hover {
+        @include backascout-bg-color('gray-200');
+      }
+    }
+
+    &--error {
+      @include backascout-color('red-900');
+      @include backascout-bg-color('red-100');
+      @include backascout-border('red-300', llg, left);
+
+      &:active,
+      &:hover {
+        @include backascout-bg-color('red-200');
+      }
+    }
+
+    &--info {
+      @include backascout-color('blue-900');
+      @include backascout-bg-color('blue-100');
+      @include backascout-border('blue-300', llg, left);
+
+      &:active,
+      &:hover {
+        @include backascout-bg-color('blue-200');
+      }
+    }
+
+    &--success {
+      @include backascout-color('green-900');
+      @include backascout-bg-color('green-100');
+      @include backascout-border('green-300', llg, left);
+
+      &:active,
+      &:hover {
+        @include backascout-bg-color('green-200');
+      }
+    }
+
+    &--warning {
+      @include backascout-color('orange-900');
+      @include backascout-bg-color('orange-100');
+      @include backascout-border('orange-300', llg, left);
+
+      &:active,
+      &:hover {
+        @include backascout-bg-color('orange-200');
+      }
+    }
+
+    &:focus {
+      @include backascout-focus-outline;
+
+      &:not(:focus-visible) {
+        outline: 0;
+      }
+    }
+  }
+
+  &__header-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__header-icon {
+    width: 16px;
+    height: 16px;
+    min-width: $backascout-spacing-16;
+    margin-left: $backascout-spacing-8;
+    transition: transform $backascout-duration-300 $backascout-ease-in-out;
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    &--visible {
+      height: auto;
+      margin-top: $backascout-spacing-4;
+      padding: $backascout-spacing-8 $backascout-spacing-16 $backascout-spacing-24;
+      opacity: 1;
+      transition: opacity $backascout-duration-100 $backascout-ease-in $backascout-duration-50;
+    }
+  }
+}

@@ -5,9 +5,164 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ScoutVariantType } from "./types/ScoutVariant";
+import { AccordionItemVariantType } from "./types/AccordionItemVariant";
+import { AlertVariantType } from "./types/AlertVariant";
+import { ColumnWidthType } from "./components/backascout-grid/backascout-col/backascout-col";
+import { HTagType } from "./types/HTag";
+import { HeadingVariantType } from "./types/HeadingVariant";
+import { GetAttributeType } from "./types/GetAttributeType";
+import { ImageVariantType } from "./types/ImageVariant";
+import { LinkVariantType } from "./types/LinkVariant";
+import { ParagraphVariantType } from "./types/ParagraphVariant";
 export namespace Components {
+    interface BackascoutAccordion {
+        "heading"?: string;
+        "variant"?: ScoutVariantType;
+    }
+    interface BackascoutAccordionItem {
+        "heading": string;
+        "variant": AccordionItemVariantType;
+    }
+    interface BackascoutAlert {
+        "body"?: string;
+        "heading": string;
+        "linkHref"?: string;
+        "linkText"?: string;
+        "variant": AlertVariantType;
+    }
+    interface BackascoutBlogCard {
+        "badge"?: string;
+        "body"?: string;
+        "heading": string;
+        "href": string;
+        "imageAlt"?: string;
+        "imageUrl"?: string;
+    }
+    interface BackascoutButton {
+    }
+    interface BackascoutCol {
+        /**
+          * Hide breakpoint on this breakpoint scope and down
+         */
+        "hideDown": 'sm' | 'md';
+        /**
+          * Hide column from this breakpoint up
+         */
+        "hideUp": 'sm' | 'md' | 'lg';
+        /**
+          * Column size
+         */
+        "width": ColumnWidthType;
+        /**
+          * Column size starting from LG breakpoint
+         */
+        "widthLg": ColumnWidthType;
+        /**
+          * Column size starting from MD breakpoint
+         */
+        "widthMd": ColumnWidthType;
+    }
+    interface BackascoutGrid {
+    }
+    interface BackascoutHeading {
+        /**
+          * The tag to render. This is mandatory.
+         */
+        "tag": HTagType;
+        /**
+          * Determines the appearance of the text.
+         */
+        "variant": HeadingVariantType;
+    }
+    interface BackascoutImage {
+        /**
+          * Alternative text for image
+         */
+        "alt"?: string;
+        /**
+          * The the loading method for the image
+         */
+        "loading"?: GetAttributeType<'img', 'loading'>;
+        /**
+          * Specifies the path to the image served to medium sized medias (between 600 and 1024 px)
+         */
+        "mediumSet"?: string;
+        /**
+          * Specifies the path to the image served to small medias (below 600 px)
+         */
+        "smallSet"?: string;
+        /**
+          * Specifies the path to the image that will be served to larger medias (above 1024 px) and as a fallback for legacy browsers
+         */
+        "src": string;
+        /**
+          * Adds variant of the image
+         */
+        "variant"?: ImageVariantType;
+    }
+    interface BackascoutLink {
+        /**
+          * Native download attribute of anchor element
+         */
+        "download"?: GetAttributeType<'a', 'download'>;
+        /**
+          * Native href attribute of anchor element
+         */
+        "href": GetAttributeType<'a', 'href'>;
+        /**
+          * Native referrerPolicy attribute of anchor element
+         */
+        "referrerPolicy"?: ReferrerPolicy;
+        "rel"?: GetAttributeType<'a', 'rel'>;
+        /**
+          * A silent link is intended to wrap an element to make it a link but not add any styling except for the pointer cursor and focus style.
+         */
+        "silent": boolean;
+        /**
+          * Native target attribute of anchor element
+         */
+        "target"?: GetAttributeType<'a', 'target'>;
+        /**
+          * Determines if link is displayed on its own line (standalone) or within the current text content (text).
+         */
+        "variant": LinkVariantType;
+    }
+    interface BackascoutLoader {
+    }
+    interface BackascoutP {
+        /**
+          * Determines the appearance of the text.
+         */
+        "variant": ParagraphVariantType;
+    }
+    interface BackascoutRow {
+    }
+    interface BackascoutSchedule {
+        "apiUrl"?: string;
+        "variant"?: ScoutVariantType;
+    }
+    interface BackascoutScheduleCard {
+        "activityDescription"?: string;
+        "activityHeading": string;
+        "activityHref"?: string;
+        "activityHrefLabel"?: string;
+        "cancelled"?: boolean;
+        "endDate": string;
+        "heading": string;
+        "startDate": string;
+        "subheading"?: string;
+        "variant"?: ScoutVariantType;
+    }
+    interface BackascoutTabFilter {
+    }
+    interface BackascoutTabFilterOption {
+        "selected"?: boolean;
+        "value": string;
+        "variant"?: ScoutVariantType;
+    }
     interface CovidAlert {
-        "body": string;
+        "body"?: string;
         "heading": string;
         "linkHref"?: string;
         "linkText"?: string;
@@ -26,6 +181,108 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLBackascoutAccordionElement extends Components.BackascoutAccordion, HTMLStencilElement {
+    }
+    var HTMLBackascoutAccordionElement: {
+        prototype: HTMLBackascoutAccordionElement;
+        new (): HTMLBackascoutAccordionElement;
+    };
+    interface HTMLBackascoutAccordionItemElement extends Components.BackascoutAccordionItem, HTMLStencilElement {
+    }
+    var HTMLBackascoutAccordionItemElement: {
+        prototype: HTMLBackascoutAccordionItemElement;
+        new (): HTMLBackascoutAccordionItemElement;
+    };
+    interface HTMLBackascoutAlertElement extends Components.BackascoutAlert, HTMLStencilElement {
+    }
+    var HTMLBackascoutAlertElement: {
+        prototype: HTMLBackascoutAlertElement;
+        new (): HTMLBackascoutAlertElement;
+    };
+    interface HTMLBackascoutBlogCardElement extends Components.BackascoutBlogCard, HTMLStencilElement {
+    }
+    var HTMLBackascoutBlogCardElement: {
+        prototype: HTMLBackascoutBlogCardElement;
+        new (): HTMLBackascoutBlogCardElement;
+    };
+    interface HTMLBackascoutButtonElement extends Components.BackascoutButton, HTMLStencilElement {
+    }
+    var HTMLBackascoutButtonElement: {
+        prototype: HTMLBackascoutButtonElement;
+        new (): HTMLBackascoutButtonElement;
+    };
+    interface HTMLBackascoutColElement extends Components.BackascoutCol, HTMLStencilElement {
+    }
+    var HTMLBackascoutColElement: {
+        prototype: HTMLBackascoutColElement;
+        new (): HTMLBackascoutColElement;
+    };
+    interface HTMLBackascoutGridElement extends Components.BackascoutGrid, HTMLStencilElement {
+    }
+    var HTMLBackascoutGridElement: {
+        prototype: HTMLBackascoutGridElement;
+        new (): HTMLBackascoutGridElement;
+    };
+    interface HTMLBackascoutHeadingElement extends Components.BackascoutHeading, HTMLStencilElement {
+    }
+    var HTMLBackascoutHeadingElement: {
+        prototype: HTMLBackascoutHeadingElement;
+        new (): HTMLBackascoutHeadingElement;
+    };
+    interface HTMLBackascoutImageElement extends Components.BackascoutImage, HTMLStencilElement {
+    }
+    var HTMLBackascoutImageElement: {
+        prototype: HTMLBackascoutImageElement;
+        new (): HTMLBackascoutImageElement;
+    };
+    interface HTMLBackascoutLinkElement extends Components.BackascoutLink, HTMLStencilElement {
+    }
+    var HTMLBackascoutLinkElement: {
+        prototype: HTMLBackascoutLinkElement;
+        new (): HTMLBackascoutLinkElement;
+    };
+    interface HTMLBackascoutLoaderElement extends Components.BackascoutLoader, HTMLStencilElement {
+    }
+    var HTMLBackascoutLoaderElement: {
+        prototype: HTMLBackascoutLoaderElement;
+        new (): HTMLBackascoutLoaderElement;
+    };
+    interface HTMLBackascoutPElement extends Components.BackascoutP, HTMLStencilElement {
+    }
+    var HTMLBackascoutPElement: {
+        prototype: HTMLBackascoutPElement;
+        new (): HTMLBackascoutPElement;
+    };
+    interface HTMLBackascoutRowElement extends Components.BackascoutRow, HTMLStencilElement {
+    }
+    var HTMLBackascoutRowElement: {
+        prototype: HTMLBackascoutRowElement;
+        new (): HTMLBackascoutRowElement;
+    };
+    interface HTMLBackascoutScheduleElement extends Components.BackascoutSchedule, HTMLStencilElement {
+    }
+    var HTMLBackascoutScheduleElement: {
+        prototype: HTMLBackascoutScheduleElement;
+        new (): HTMLBackascoutScheduleElement;
+    };
+    interface HTMLBackascoutScheduleCardElement extends Components.BackascoutScheduleCard, HTMLStencilElement {
+    }
+    var HTMLBackascoutScheduleCardElement: {
+        prototype: HTMLBackascoutScheduleCardElement;
+        new (): HTMLBackascoutScheduleCardElement;
+    };
+    interface HTMLBackascoutTabFilterElement extends Components.BackascoutTabFilter, HTMLStencilElement {
+    }
+    var HTMLBackascoutTabFilterElement: {
+        prototype: HTMLBackascoutTabFilterElement;
+        new (): HTMLBackascoutTabFilterElement;
+    };
+    interface HTMLBackascoutTabFilterOptionElement extends Components.BackascoutTabFilterOption, HTMLStencilElement {
+    }
+    var HTMLBackascoutTabFilterOptionElement: {
+        prototype: HTMLBackascoutTabFilterOptionElement;
+        new (): HTMLBackascoutTabFilterOptionElement;
+    };
     interface HTMLCovidAlertElement extends Components.CovidAlert, HTMLStencilElement {
     }
     var HTMLCovidAlertElement: {
@@ -51,6 +308,23 @@ declare global {
         new (): HTMLLoadingSpinnerElement;
     };
     interface HTMLElementTagNameMap {
+        "backascout-accordion": HTMLBackascoutAccordionElement;
+        "backascout-accordion-item": HTMLBackascoutAccordionItemElement;
+        "backascout-alert": HTMLBackascoutAlertElement;
+        "backascout-blog-card": HTMLBackascoutBlogCardElement;
+        "backascout-button": HTMLBackascoutButtonElement;
+        "backascout-col": HTMLBackascoutColElement;
+        "backascout-grid": HTMLBackascoutGridElement;
+        "backascout-heading": HTMLBackascoutHeadingElement;
+        "backascout-image": HTMLBackascoutImageElement;
+        "backascout-link": HTMLBackascoutLinkElement;
+        "backascout-loader": HTMLBackascoutLoaderElement;
+        "backascout-p": HTMLBackascoutPElement;
+        "backascout-row": HTMLBackascoutRowElement;
+        "backascout-schedule": HTMLBackascoutScheduleElement;
+        "backascout-schedule-card": HTMLBackascoutScheduleCardElement;
+        "backascout-tab-filter": HTMLBackascoutTabFilterElement;
+        "backascout-tab-filter-option": HTMLBackascoutTabFilterOptionElement;
         "covid-alert": HTMLCovidAlertElement;
         "covid-post": HTMLCovidPostElement;
         "covid-posts": HTMLCovidPostsElement;
@@ -58,6 +332,153 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface BackascoutAccordion {
+        "heading"?: string;
+        "variant"?: ScoutVariantType;
+    }
+    interface BackascoutAccordionItem {
+        "heading": string;
+        "variant"?: AccordionItemVariantType;
+    }
+    interface BackascoutAlert {
+        "body"?: string;
+        "heading": string;
+        "linkHref"?: string;
+        "linkText"?: string;
+        "variant"?: AlertVariantType;
+    }
+    interface BackascoutBlogCard {
+        "badge"?: string;
+        "body"?: string;
+        "heading": string;
+        "href": string;
+        "imageAlt"?: string;
+        "imageUrl"?: string;
+    }
+    interface BackascoutButton {
+    }
+    interface BackascoutCol {
+        /**
+          * Hide breakpoint on this breakpoint scope and down
+         */
+        "hideDown"?: 'sm' | 'md';
+        /**
+          * Hide column from this breakpoint up
+         */
+        "hideUp"?: 'sm' | 'md' | 'lg';
+        /**
+          * Column size
+         */
+        "width"?: ColumnWidthType;
+        /**
+          * Column size starting from LG breakpoint
+         */
+        "widthLg"?: ColumnWidthType;
+        /**
+          * Column size starting from MD breakpoint
+         */
+        "widthMd"?: ColumnWidthType;
+    }
+    interface BackascoutGrid {
+    }
+    interface BackascoutHeading {
+        /**
+          * The tag to render. This is mandatory.
+         */
+        "tag"?: HTagType;
+        /**
+          * Determines the appearance of the text.
+         */
+        "variant"?: HeadingVariantType;
+    }
+    interface BackascoutImage {
+        /**
+          * Alternative text for image
+         */
+        "alt"?: string;
+        /**
+          * The the loading method for the image
+         */
+        "loading"?: GetAttributeType<'img', 'loading'>;
+        /**
+          * Specifies the path to the image served to medium sized medias (between 600 and 1024 px)
+         */
+        "mediumSet"?: string;
+        /**
+          * Specifies the path to the image served to small medias (below 600 px)
+         */
+        "smallSet"?: string;
+        /**
+          * Specifies the path to the image that will be served to larger medias (above 1024 px) and as a fallback for legacy browsers
+         */
+        "src": string;
+        /**
+          * Adds variant of the image
+         */
+        "variant"?: ImageVariantType;
+    }
+    interface BackascoutLink {
+        /**
+          * Native download attribute of anchor element
+         */
+        "download"?: GetAttributeType<'a', 'download'>;
+        /**
+          * Native href attribute of anchor element
+         */
+        "href"?: GetAttributeType<'a', 'href'>;
+        /**
+          * Native referrerPolicy attribute of anchor element
+         */
+        "referrerPolicy"?: ReferrerPolicy;
+        "rel"?: GetAttributeType<'a', 'rel'>;
+        /**
+          * A silent link is intended to wrap an element to make it a link but not add any styling except for the pointer cursor and focus style.
+         */
+        "silent"?: boolean;
+        /**
+          * Native target attribute of anchor element
+         */
+        "target"?: GetAttributeType<'a', 'target'>;
+        /**
+          * Determines if link is displayed on its own line (standalone) or within the current text content (text).
+         */
+        "variant"?: LinkVariantType;
+    }
+    interface BackascoutLoader {
+    }
+    interface BackascoutP {
+        /**
+          * Determines the appearance of the text.
+         */
+        "variant"?: ParagraphVariantType;
+    }
+    interface BackascoutRow {
+    }
+    interface BackascoutSchedule {
+        "apiUrl"?: string;
+        "variant"?: ScoutVariantType;
+    }
+    interface BackascoutScheduleCard {
+        "activityDescription"?: string;
+        "activityHeading": string;
+        "activityHref"?: string;
+        "activityHrefLabel"?: string;
+        "cancelled"?: boolean;
+        "endDate": string;
+        "heading": string;
+        "startDate": string;
+        "subheading"?: string;
+        "variant"?: ScoutVariantType;
+    }
+    interface BackascoutTabFilter {
+        "onBackascoutSelect"?: (event: CustomEvent<string>) => void;
+    }
+    interface BackascoutTabFilterOption {
+        "onBackascoutSelect"?: (event: CustomEvent<string>) => void;
+        "selected"?: boolean;
+        "value": string;
+        "variant"?: ScoutVariantType;
+    }
     interface CovidAlert {
         "body"?: string;
         "heading"?: string;
@@ -77,6 +498,23 @@ declare namespace LocalJSX {
     interface LoadingSpinner {
     }
     interface IntrinsicElements {
+        "backascout-accordion": BackascoutAccordion;
+        "backascout-accordion-item": BackascoutAccordionItem;
+        "backascout-alert": BackascoutAlert;
+        "backascout-blog-card": BackascoutBlogCard;
+        "backascout-button": BackascoutButton;
+        "backascout-col": BackascoutCol;
+        "backascout-grid": BackascoutGrid;
+        "backascout-heading": BackascoutHeading;
+        "backascout-image": BackascoutImage;
+        "backascout-link": BackascoutLink;
+        "backascout-loader": BackascoutLoader;
+        "backascout-p": BackascoutP;
+        "backascout-row": BackascoutRow;
+        "backascout-schedule": BackascoutSchedule;
+        "backascout-schedule-card": BackascoutScheduleCard;
+        "backascout-tab-filter": BackascoutTabFilter;
+        "backascout-tab-filter-option": BackascoutTabFilterOption;
         "covid-alert": CovidAlert;
         "covid-post": CovidPost;
         "covid-posts": CovidPosts;
@@ -87,6 +525,23 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "backascout-accordion": LocalJSX.BackascoutAccordion & JSXBase.HTMLAttributes<HTMLBackascoutAccordionElement>;
+            "backascout-accordion-item": LocalJSX.BackascoutAccordionItem & JSXBase.HTMLAttributes<HTMLBackascoutAccordionItemElement>;
+            "backascout-alert": LocalJSX.BackascoutAlert & JSXBase.HTMLAttributes<HTMLBackascoutAlertElement>;
+            "backascout-blog-card": LocalJSX.BackascoutBlogCard & JSXBase.HTMLAttributes<HTMLBackascoutBlogCardElement>;
+            "backascout-button": LocalJSX.BackascoutButton & JSXBase.HTMLAttributes<HTMLBackascoutButtonElement>;
+            "backascout-col": LocalJSX.BackascoutCol & JSXBase.HTMLAttributes<HTMLBackascoutColElement>;
+            "backascout-grid": LocalJSX.BackascoutGrid & JSXBase.HTMLAttributes<HTMLBackascoutGridElement>;
+            "backascout-heading": LocalJSX.BackascoutHeading & JSXBase.HTMLAttributes<HTMLBackascoutHeadingElement>;
+            "backascout-image": LocalJSX.BackascoutImage & JSXBase.HTMLAttributes<HTMLBackascoutImageElement>;
+            "backascout-link": LocalJSX.BackascoutLink & JSXBase.HTMLAttributes<HTMLBackascoutLinkElement>;
+            "backascout-loader": LocalJSX.BackascoutLoader & JSXBase.HTMLAttributes<HTMLBackascoutLoaderElement>;
+            "backascout-p": LocalJSX.BackascoutP & JSXBase.HTMLAttributes<HTMLBackascoutPElement>;
+            "backascout-row": LocalJSX.BackascoutRow & JSXBase.HTMLAttributes<HTMLBackascoutRowElement>;
+            "backascout-schedule": LocalJSX.BackascoutSchedule & JSXBase.HTMLAttributes<HTMLBackascoutScheduleElement>;
+            "backascout-schedule-card": LocalJSX.BackascoutScheduleCard & JSXBase.HTMLAttributes<HTMLBackascoutScheduleCardElement>;
+            "backascout-tab-filter": LocalJSX.BackascoutTabFilter & JSXBase.HTMLAttributes<HTMLBackascoutTabFilterElement>;
+            "backascout-tab-filter-option": LocalJSX.BackascoutTabFilterOption & JSXBase.HTMLAttributes<HTMLBackascoutTabFilterOptionElement>;
             "covid-alert": LocalJSX.CovidAlert & JSXBase.HTMLAttributes<HTMLCovidAlertElement>;
             "covid-post": LocalJSX.CovidPost & JSXBase.HTMLAttributes<HTMLCovidPostElement>;
             "covid-posts": LocalJSX.CovidPosts & JSXBase.HTMLAttributes<HTMLCovidPostsElement>;

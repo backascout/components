@@ -1,0 +1,27 @@
+// Exported styles
+// https://stenciljs.com/docs/styling#global-styles
+
+@import 'colors/mixins';
+@import 'typography/mixins';
+
+/*
+  Browsers default font-size is 16px. Using pixel is not a good practice
+  because changing default font-size won't effect the element's font-size in hierarchy
+  and it is not good user experience. So we use rem.
+*/
+:root,
+html {
+  font-size: 62.5%; // Setting default font size so that 1rem is equal to 10px which is easy to use. We get this value from 10/16.
+}
+
+body {
+  @include backascout-color('black');
+  @include backascout-static-type(16px);
+  @include backascout-typography('default', 'medium');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,42 @@
+@import 'typography/mixins';
+
+:host {
+  display: block;
+}
+
+.backascout-p {
+  hyphens: auto;
+  margin: 0;
+
+  &--paragraph-100 {
+    @include backascout-paragraph-100;
+  }
+
+  &--paragraph-200 {
+    @include backascout-paragraph-200;
+  }
+
+  &--preamble-100 {
+    @include backascout-preamble-100;
+  }
+
+  &--preamble-200 {
+    @include backascout-preamble-200;
+  }
+
+  &--additional-100 {
+    @include backascout-additional-100;
+  }
+
+  &--subsection {
+    @include backascout-subsection;
+  }
+
+  &--overline-100 {
+    @include backascout-overline-100;
+  }
+
+  &--overline-200 {
+    @include backascout-overline-200;
+  }
+}

@@ -1,0 +1,11 @@
+$backascout-layer-base: auto;
+$backascout-layer-dropdown: 100;
+$backascout-layer-header: 200;
+$backascout-layer-modal: 300;
+
+$extract: (
+  'base': $backascout-layer-base,
+  'dropdown': $backascout-layer-dropdown,
+  'header': $backascout-layer-header,
+  'modal': $backascout-layer-modal,
+);

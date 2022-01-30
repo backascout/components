@@ -1,0 +1,101 @@
+@import 'borders/mixins';
+@import 'colors/mixins';
+@import 'spacing/variables';
+
+.backascout-schedule-card {
+  @include backascout-border('black', xs, all);
+
+  &--scouterna {
+    @include backascout-border('scouterna', xs, all);
+  }
+
+  &--familjescouterna {
+    @include backascout-border('familjescouterna', xs, all);
+  }
+
+  &--spararna {
+    @include backascout-border('spararna', xs, all);
+  }
+
+  &--upptackarna {
+    @include backascout-border('upptackarna', xs, all);
+  }
+
+  &--aventyrarna {
+    @include backascout-border('aventyrarna', xs, all);
+  }
+
+  &--utmanarna {
+    @include backascout-border('utmanarna', xs, all);
+  }
+
+  &--rover {
+    @include backascout-border('rover', xs, all);
+  }
+
+  &__header {
+    @include backascout-bg-color('gray-200');
+    padding: $backascout-spacing-12 $backascout-spacing-16;
+
+    &--cancelled {
+      text-decoration: line-through;
+    }
+
+    &--scouterna {
+      @include backascout-color('scouterna-accent');
+      @include backascout-bg-color('scouterna');
+    }
+
+    &--familjescouterna {
+      @include backascout-color('familjescouterna-accent');
+      @include backascout-bg-color('familjescouterna');
+    }
+
+    &--spararna {
+      @include backascout-color('spararna-accent');
+      @include backascout-bg-color('spararna');
+    }
+
+    &--upptackarna {
+      @include backascout-color('upptackarna-accent');
+      @include backascout-bg-color('upptackarna');
+    }
+
+    &--aventyrarna {
+      @include backascout-color('aventyrarna-accent');
+      @include backascout-bg-color('aventyrarna');
+    }
+
+    &--utmanarna {
+      @include backascout-color('utmanarna-accent');
+      @include backascout-bg-color('utmanarna');
+    }
+
+    &--rover {
+      @include backascout-color('rover-accent');
+      @include backascout-bg-color('rover');
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__content {
+    padding: $backascout-spacing-8 $backascout-spacing-16;
+
+    &--cancelled {
+      text-decoration: line-through;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__cancelled-alert {
+    margin: $backascout-spacing-12 0;
+  }
+}
