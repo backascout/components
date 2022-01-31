@@ -22,9 +22,17 @@
 
  - [covid-posts](../covid-posts)
 
+### Depends on
+
+- [backascout-blog-card](../../backascout-blog-card)
+
 ### Graph
 ```mermaid
 graph TD;
+  covid-post --> backascout-blog-card
+  backascout-blog-card --> backascout-link
+  backascout-blog-card --> backascout-p
+  backascout-blog-card --> backascout-heading
   covid-posts --> covid-post
   style covid-post fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -2,34 +2,580 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
     <title>Backa Scoutkår Components</title>
 
     <script type="module" src="/build/components.esm.js"></script>
     <script nomodule src="/build/components.js"></script>
+    <script nomodule src="/build/components.js"></script>
 
-    <link rel="stylesheet" href="https://nykarwebb.se/app/themes/karwebb/assets/dist/style.min.css?ver=2.1">
-    <link rel="stylesheet" href="https://nykarwebb.se/wp-includes/css/dist/block-library/style.min.css?ver=5.7.1">
+    <link rel="stylesheet" href="/build/components.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://nykarwebb.se/app/themes/karwebb/assets/dist/style.min.css?ver=2.1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://nykarwebb.se/wp-includes/css/dist/block-library/style.min.css?ver=5.7.1"
+    />
   </head>
   <body>
     <section class="components component-columns">
       <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">backascout-accordion</backascout-heading>
         <div class="row justify-content-center">
-          <article class="entry-content component-columns--column col-12 col-lg no-margin component-text">
-            <p>
-              <covid-alert heading="Samlad information med anledning av covid-19" body="Backa Scoutkår håller koll på rekommendationerna från myndigheterna och Scouterna centralt. Det är viktigt att vi alla hjälps åt att minska smittspridningen." link-text="Backa Scoutkårs information med anledning av covid-19" link-href="https://backa.scout.se/covid/"></covid-posts>
-            </p>
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-accordion heading="Accordion">
+              <backascout-accordion-item heading="Accordion item 1">
+                Accordion item 1 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Accordion item 2">
+                Accordion item 2 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Default item variant" variant="default">
+                Default item variant
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Error item variant" variant="error">
+                Error item variant
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Info item variant" variant="info">
+                Info item variant
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Success item variant" variant="success">
+                Success item variant
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Warning item variant" variant="warning">
+                Warning item variant
+              </backascout-accordion-item>
+            </backascout-accordion>
+
+            <br />
+
+            <backascout-accordion heading="Scouterna" variant="scouterna">
+              <backascout-accordion-item heading="Accordion item 3">
+                Accordion item 3 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Accordion item 4">
+                Accordion item 4 content
+              </backascout-accordion-item>
+            </backascout-accordion>
+
+            <br />
+
+            <backascout-accordion heading="Familjescouterna" variant="familjescouterna">
+              <backascout-accordion-item heading="Accordion item 5">
+                Accordion item 5 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Accordion item 6">
+                Accordion item 6 content
+              </backascout-accordion-item>
+            </backascout-accordion>
+
+            <br />
+
+            <backascout-accordion heading="Spårarna" variant="spararna">
+              <backascout-accordion-item heading="Accordion item 7">
+                Accordion item 7 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Accordion item 8">
+                Accordion item 8 content
+              </backascout-accordion-item>
+            </backascout-accordion>
+
+            <br />
+
+            <backascout-accordion heading="Upptäckarna" variant="upptackarna">
+              <backascout-accordion-item heading="Accordion item 9">
+                Accordion item 9 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Accordion item 10">
+                Accordion item 10 content
+              </backascout-accordion-item>
+            </backascout-accordion>
+
+            <br />
+
+            <backascout-accordion heading="Äventyrarna" variant="aventyrarna">
+              <backascout-accordion-item heading="Accordion item 11">
+                Accordion item 11 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Accordion item 12">
+                Accordion item 12 content
+              </backascout-accordion-item>
+            </backascout-accordion>
+
+            <br />
+
+            <backascout-accordion heading="Utmanarna" variant="utmanarna">
+              <backascout-accordion-item heading="Accordion item 13">
+                Accordion item 13 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Accordion item 14">
+                Accordion item 14 content
+              </backascout-accordion-item>
+            </backascout-accordion>
+
+            <br />
+
+            <backascout-accordion heading="Rover" variant="rover">
+              <backascout-accordion-item heading="Accordion item 15">
+                Accordion item 15 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Accordion item 16">
+                Accordion item 16 content
+              </backascout-accordion-item>
+            </backascout-accordion>
+
+            <br />
+
+            <backascout-accordion heading="Aktiviteter">
+              <div slot="header-right">Slot in the header right</div>
+
+              <backascout-accordion-item heading="Accordion item 17">
+                Accordion item 17 content
+              </backascout-accordion-item>
+              <backascout-accordion-item heading="Accordion item 18">
+                Accordion item 18 content
+              </backascout-accordion-item>
+            </backascout-accordion>
           </article>
         </div>
       </div>
     </section>
+
     <section class="components component-columns">
       <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">backascout-alert</backascout-heading>
         <div class="row justify-content-center">
-          <article class="entry-content component-columns--column col-12 col-lg no-margin component-text">
-            <p>
-              <covid-posts host="https://backa.scout.se"></covid-posts>
-            </p>
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-alert
+              variant="default"
+              heading="Lorem, ipsum dolor sit amet"
+              link-href="#"
+              link-text="Lorem ipsum..."
+            >
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ab voluptate aut
+            </backascout-alert>
+
+            <br />
+
+            <backascout-alert
+              variant="success"
+              heading="Lorem, ipsum dolor sit amet"
+              link-href="#"
+              link-text="Lorem ipsum..."
+            >
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ab voluptate aut
+            </backascout-alert>
+
+            <br />
+
+            <backascout-alert
+              variant="warning"
+              heading="Lorem, ipsum dolor sit amet"
+              link-href="#"
+              link-text="Lorem ipsum..."
+            >
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ab voluptate aut
+            </backascout-alert>
+
+            <br />
+
+            <backascout-alert
+              variant="error"
+              heading="Lorem, ipsum dolor sit amet"
+              link-href="#"
+              link-text="Lorem ipsum..."
+            >
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ab voluptate aut
+            </backascout-alert>
+
+            <br />
+
+            <backascout-alert
+              variant="info"
+              heading="Lorem, ipsum dolor sit amet"
+              link-href="#"
+              link-text="Lorem ipsum..."
+            >
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ab voluptate aut
+            </backascout-alert>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">backascout-blog-card</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-grid>
+              <backascout-row>
+                <backascout-col width="12" width-md="6" width-lg="4">
+                  <backascout-blog-card
+                    badge="Scoutkåren"
+                    body="Till Scouter och målsmän i Backa Scoutkår Hej Vi har i Backa Scoutkår under hösten försökt att hantera de olika förutsättningarna i samband med Corona…"
+                    heading="Vårterminen 2021"
+                    href="#"
+                    image-url="https://web.cdn.scouterna.net/uploads/sites/102/2021/01/vt2021-720x544.png"
+                  ></backascout-blog-card>
+                </backascout-col>
+              </backascout-row>
+            </backascout-grid>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">backascout-button</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-button></backascout-button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">backascout-heading</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-heading tag="h1" variant="title-100">
+              Lorem, ipsum dolor sit amet
+            </backascout-heading>
+            <backascout-heading tag="h1" variant="title-200">
+              Lorem, ipsum dolor sit amet
+            </backascout-heading>
+            <backascout-heading tag="h1" variant="title-300">
+              Lorem, ipsum dolor sit amet
+            </backascout-heading>
+            <backascout-heading tag="h1" variant="title-400">
+              Lorem, ipsum dolor sit amet
+            </backascout-heading>
+            <backascout-heading tag="h1" variant="title-500">
+              Lorem, ipsum dolor sit amet
+            </backascout-heading>
+            <backascout-heading tag="h1" variant="title-600">
+              Lorem ipsum dolor sit amet
+            </backascout-heading>
+            <backascout-heading tag="h1" variant="title-700">
+              Lorem, ipsum dolor sit amet
+            </backascout-heading>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">backascout-link</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-link href="#">Link to this page</backascout-link>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">backascout-loader</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-loader></backascout-loader>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">backascout-p</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-p>paragraph-100 (default)</backascout-p>
+
+            <br />
+
+            <backascout-p variant="paragraph-200">paragraph-200</backascout-p>
+
+            <br />
+
+            <backascout-p variant="preamble-100">preamble-100</backascout-p>
+
+            <br />
+
+            <backascout-p variant="preamble-200">preamble-200</backascout-p>
+
+            <br />
+
+            <backascout-p variant="additional-100">additional-100</backascout-p>
+
+            <br />
+
+            <backascout-p variant="subsection">subsection</backascout-p>
+
+            <br />
+
+            <backascout-p variant="overline-100">overline-100</backascout-p>
+
+            <br />
+
+            <backascout-p variant="overline-200">overline-200</backascout-p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">backascout-schedule</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-schedule
+              api-url="https://cdn.findq-assets.eu/@backascout/components/schedules/spararna.json"
+              variant="spararna"
+            ></backascout-schedule>
+
+            <br />
+
+            <backascout-schedule
+              api-url="https://cdn.findq-assets.eu/@backascout/components/schedules/upptackarna.json"
+              variant="upptackarna"
+            ></backascout-schedule>
+
+            <br />
+
+            <backascout-schedule
+              api-url="https://cdn.findq-assets.eu/@backascout/components/schedules/aventyrarna.json"
+              variant="aventyrarna"
+            ></backascout-schedule>
+
+            <br />
+
+            <backascout-schedule
+              api-url="https://cdn.findq-assets.eu/@backascout/components/schedules/utmanarna.json"
+              variant="utmanarna"
+            ></backascout-schedule>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">
+          backascout-schedule-card
+        </backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-schedule-card
+              activity-heading="Uppstart"
+              heading="Nästa aktivitet"
+              start-date="2021-09-01 18:00"
+              end-date="2021-09-01 19:45"
+              variant="upptackarna"
+            ></backascout-schedule-card>
+
+            <br />
+
+            <backascout-schedule-card
+              activity-heading="Uppstart"
+              activity-description="Välkomna till en ny termin, vi..."
+              heading="Nästa aktivitet"
+              start-date="2021-09-01 18:00"
+              end-date="2021-09-01 19:45"
+              variant="upptackarna"
+              cancelled="true"
+            ></backascout-schedule-card>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">
+          backascout-tab-filter
+        </backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <backascout-tab-filter>
+              <backascout-tab-filter-option value="all"> Alla </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="past">
+                Tidigare
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="upcoming" selected>
+                Kommande
+              </backascout-tab-filter-option>
+            </backascout-tab-filter>
+
+            <br />
+
+            <backascout-tab-filter>
+              <backascout-tab-filter-option value="all" variant="scouterna">
+                Alla
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="past" variant="scouterna">
+                Tidigare
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="upcoming" variant="scouterna" selected>
+                Kommande
+              </backascout-tab-filter-option>
+            </backascout-tab-filter>
+
+            <br />
+
+            <backascout-tab-filter>
+              <backascout-tab-filter-option value="all" variant="familjescouterna">
+                Alla
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="past" variant="familjescouterna">
+                Tidigare
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="upcoming" variant="familjescouterna" selected>
+                Kommande
+              </backascout-tab-filter-option>
+            </backascout-tab-filter>
+
+            <br />
+
+            <backascout-tab-filter>
+              <backascout-tab-filter-option value="all" variant="spararna">
+                Alla
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="past" variant="spararna">
+                Tidigare
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="upcoming" variant="spararna" selected>
+                Kommande
+              </backascout-tab-filter-option>
+            </backascout-tab-filter>
+
+            <br />
+
+            <backascout-tab-filter>
+              <backascout-tab-filter-option value="all" variant="upptackarna">
+                Alla
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="past" variant="upptackarna">
+                Tidigare
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="upcoming" variant="upptackarna" selected>
+                Kommande
+              </backascout-tab-filter-option>
+            </backascout-tab-filter>
+
+            <br />
+
+            <backascout-tab-filter>
+              <backascout-tab-filter-option value="all" variant="aventyrarna">
+                Alla
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="past" variant="aventyrarna">
+                Tidigare
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="upcoming" variant="aventyrarna" selected>
+                Kommande
+              </backascout-tab-filter-option>
+            </backascout-tab-filter>
+
+            <br />
+
+            <backascout-tab-filter>
+              <backascout-tab-filter-option value="all" variant="utmanarna">
+                Alla
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="past" variant="utmanarna">
+                Tidigare
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="upcoming" variant="utmanarna" selected>
+                Kommande
+              </backascout-tab-filter-option>
+            </backascout-tab-filter>
+
+            <br />
+
+            <backascout-tab-filter>
+              <backascout-tab-filter-option value="all" variant="rover">
+                Alla
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="past" variant="rover">
+                Tidigare
+              </backascout-tab-filter-option>
+              <backascout-tab-filter-option value="upcoming" variant="rover" selected>
+                Kommande
+              </backascout-tab-filter-option>
+            </backascout-tab-filter>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">covid-alert</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <covid-alert></covid-alert>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">covid-posts</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <covid-posts host="https://backa.scout.se"></covid-posts>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="components component-columns">
+      <div class="container component-columns--wrapper">
+        <backascout-heading tag="h1" variant="title-900">loading-spinner</backascout-heading>
+        <div class="row justify-content-center">
+          <article
+            class="entry-content component-columns--column col-12 col-lg no-margin component-text"
+          >
+            <loading-spinner></loading-spinner>
           </article>
         </div>
       </div>

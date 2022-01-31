@@ -50,7 +50,9 @@ export class CovidPosts {
   fetchPosts() {
     this.postsLoading = true;
 
-    fetch(`${this.host}/wp-json/wp/v2/posts?_fields=id,content,excerpt,featured_media,title,link&search=covid-news&per_page=100`)
+    fetch(
+      `${this.host}/wp-json/wp/v2/posts?_fields=id,content,excerpt,featured_media,title,link&search=covid-news&per_page=100`,
+    )
       .then(checkStatus)
       .then(parseJSON)
       .then((posts: Post[]) => {
@@ -68,6 +70,22 @@ export class CovidPosts {
       });
   }
 
+  get postRows(): Post[][] {
+    const result = [];
+
+    // Put three posts in each row
+    for (let i = 0; i < this.posts.length; i += 3) {
+      result.push(this.posts.slice(i, i + 3));
+    }
+
+    return result;
+  }
+
+  stripHTML(str: string) {
+    return str.replace(/<!--[\s\S]*?-->/g, '') // Strip HTML comments
+      .replace(/<\/?[^>]+(>|$)/g, ''); // Strip HTML tags
+  }
+
   render() {
     return (
       <Host>
@@ -78,18 +96,24 @@ export class CovidPosts {
             </div>
           )}
           {!this.postsLoading && (
-            <section class="covid-posts__posts">
-              {this.posts.map(post => (
-                <covid-post
-                  key={post.id}
-                  host={this.host}
-                  postMediaId={post.featured_media}
-                  postLink={post.link}
-                  postTitle={post.title.rendered}
-                  postExcerpt={post.excerpt.rendered}
-                ></covid-post>
+            <backascout-grid>
+              {this.postRows.map(postRow => (
+                <backascout-row>
+                  {postRow.map(post => (
+                    <backascout-col width="12" width-md="6" width-lg="4">
+                      <covid-post
+                        key={post.id}
+                        host={this.host}
+                        postMediaId={post.featured_media}
+                        postLink={post.link}
+                        postTitle={post.title.rendered}
+                        postExcerpt={this.stripHTML(post.excerpt.rendered)}
+                      ></covid-post>
+                    </backascout-col>
+                  ))}
+                </backascout-row>
               ))}
-            </section>
+            </backascout-grid>
           )}
         </div>
       </Host>

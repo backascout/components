@@ -1,0 +1,216 @@
+// Allowing hex colors only in this file, hex shouldn't be use in other styles directly
+$colors: () !default;
+
+//UI & functional colours
+//purple
+$backascout-purple-100: #fbf4ff;
+$backascout-purple-200: #edc8ff;
+$backascout-purple-300: #de99ff;
+$backascout-purple-400: #c158f8;
+$backascout-purple-500: #990ae3;
+$backascout-purple-600: #7d00bd;
+$backascout-purple-700: #5f008f;
+$backascout-purple-800: #3f005e;
+$backascout-purple-900: #1f002e;
+
+//Gray
+$backascout-gray-100: #f2f2f2;
+$backascout-gray-200: #dbdbdb;
+$backascout-gray-300: #bdbdbd;
+$backascout-gray-400: #9c9c9c;
+$backascout-gray-500: #7a7a7a;
+$backascout-gray-600: #646464;
+$backascout-gray-700: #4e4e4e;
+$backascout-gray-800: #383838;
+$backascout-gray-900: #222222;
+
+//Green
+$backascout-green-100: #ccefdd;
+$backascout-green-200: #a6e3c4;
+$backascout-green-300: #73d3a2;
+$backascout-green-400: #4cc789;
+$backascout-green-500: #26bb6f;
+$backascout-green-600: #00af56;
+$backascout-green-700: #008641;
+$backascout-green-800: #00572a;
+$backascout-green-900: #00361a;
+
+//Red
+$backascout-red-100: #fad1de;
+$backascout-red-200: #f6aec6;
+$backascout-red-300: #ef749d;
+$backascout-red-400: #e83a74;
+$backascout-red-500: #e4175c;
+$backascout-red-600: #be0040;
+$backascout-red-700: #890e37;
+$backascout-red-800: #5b0925;
+$backascout-red-900: #390617;
+
+//Orange
+$backascout-orange-100: #ffebcc;
+$backascout-orange-200: #ffdca6;
+$backascout-orange-300: #ffc366;
+$backascout-orange-400: #ffaf33;
+$backascout-orange-500: #ff9b00;
+$backascout-orange-600: #cc7c00;
+$backascout-orange-700: #995d00;
+$backascout-orange-800: #663e00;
+$backascout-orange-900: #402700;
+
+//Blue
+$backascout-blue-100: #ccebff;
+$backascout-blue-200: #a6dbff;
+$backascout-blue-300: #66c2ff;
+$backascout-blue-400: #26a8ff;
+$backascout-blue-500: #0099ff;
+$backascout-blue-600: #007acc;
+$backascout-blue-700: #00497a;
+$backascout-blue-800: #003152;
+$backascout-blue-900: #001e33;
+
+//white
+$backascout-white: #ffffff;
+
+//black
+$backascout-black: $backascout-gray-900;
+
+/*
+ * Functional colors
+ * These colors are used for development purpose.
+ */
+$backascout-functional-transparent: transparent;
+
+//scouterna
+$backascout-scouterna: #043a63;
+$backascout-scouterna-light: #0a5c8e;
+$backascout-scouterna-dark: #002844;
+$backascout-scouterna-accent: $backascout-white;
+
+//familjescouterna
+$backascout-familjescouterna: $backascout-scouterna;
+$backascout-familjescouterna-light: $backascout-scouterna-light;
+$backascout-familjescouterna-dark: $backascout-scouterna-dark;
+$backascout-familjescouterna-accent: $backascout-scouterna-accent;
+
+//spårarna
+$backascout-spararna: #3fae2a;
+$backascout-spararna-light: #5bcb3e;
+$backascout-spararna-dark: #2e8a1c;
+$backascout-spararna-accent: $backascout-white;
+
+//upptäckarna
+$backascout-upptackarna: #01a8e2;
+$backascout-upptackarna-light: #00c4f0;
+$backascout-upptackarna-dark: #0088c2;
+$backascout-upptackarna-accent: $backascout-white;
+
+//äventyrarna
+$backascout-aventyrarna: #ed5200;
+$backascout-aventyrarna-light: #f27e00;
+$backascout-aventyrarna-dark: #c13900;
+$backascout-aventyrarna-accent: $backascout-white;
+
+//utmanarna
+$backascout-utmanarna: #d60057;
+$backascout-utmanarna-light: #e61a6e;
+$backascout-utmanarna-dark: #b20049;
+$backascout-utmanarna-accent: $backascout-white;
+
+//rover
+$backascout-rover: #e2e000;
+$backascout-rover-light: #ebeb00;
+$backascout-rover-dark: #c8c800;
+$backascout-rover-accent: $backascout-black;
+
+$colors: map-merge(
+  (
+    'purple-100': $backascout-purple-100,
+    'purple-200': $backascout-purple-200,
+    'purple-300': $backascout-purple-300,
+    'purple-400': $backascout-purple-400,
+    'purple-500': $backascout-purple-500,
+    'purple-600': $backascout-purple-600,
+    'purple-700': $backascout-purple-700,
+    'purple-800': $backascout-purple-800,
+    'purple-900': $backascout-purple-900,
+    'gray-100': $backascout-gray-100,
+    'gray-200': $backascout-gray-200,
+    'gray-300': $backascout-gray-300,
+    'gray-400': $backascout-gray-400,
+    'gray-500': $backascout-gray-500,
+    'gray-600': $backascout-gray-600,
+    'gray-700': $backascout-gray-700,
+    'gray-800': $backascout-gray-800,
+    'gray-900': $backascout-gray-900,
+    'green-100': $backascout-green-100,
+    'green-200': $backascout-green-200,
+    'green-300': $backascout-green-300,
+    'green-400': $backascout-green-400,
+    'green-500': $backascout-green-500,
+    'green-600': $backascout-green-600,
+    'green-700': $backascout-green-700,
+    'green-800': $backascout-green-800,
+    'green-900': $backascout-green-900,
+    'red-100': $backascout-red-100,
+    'red-200': $backascout-red-200,
+    'red-300': $backascout-red-300,
+    'red-400': $backascout-red-400,
+    'red-500': $backascout-red-500,
+    'red-600': $backascout-red-600,
+    'red-700': $backascout-red-700,
+    'red-800': $backascout-red-800,
+    'red-900': $backascout-red-900,
+    'orange-100': $backascout-orange-100,
+    'orange-200': $backascout-orange-200,
+    'orange-300': $backascout-orange-300,
+    'orange-400': $backascout-orange-400,
+    'orange-500': $backascout-orange-500,
+    'orange-600': $backascout-orange-600,
+    'orange-700': $backascout-orange-700,
+    'orange-800': $backascout-orange-800,
+    'orange-900': $backascout-orange-900,
+    'blue-100': $backascout-blue-100,
+    'blue-200': $backascout-blue-200,
+    'blue-300': $backascout-blue-300,
+    'blue-400': $backascout-blue-400,
+    'blue-500': $backascout-blue-500,
+    'blue-600': $backascout-blue-600,
+    'blue-700': $backascout-blue-700,
+    'blue-800': $backascout-blue-800,
+    'blue-900': $backascout-blue-900,
+    'white': $backascout-white,
+    'black': $backascout-gray-900,
+    'transparent': $backascout-functional-transparent,
+    'scouterna': $backascout-scouterna,
+    'scouterna-light': $backascout-scouterna-light,
+    'scouterna-dark': $backascout-scouterna-dark,
+    'scouterna-accent': $backascout-scouterna-accent,
+    'familjescouterna': $backascout-familjescouterna,
+    'familjescouterna-light': $backascout-familjescouterna-light,
+    'familjescouterna-dark': $backascout-familjescouterna-dark,
+    'familjescouterna-accent': $backascout-familjescouterna-accent,
+    'spararna': $backascout-spararna,
+    'spararna-light': $backascout-spararna-light,
+    'spararna-dark': $backascout-spararna-dark,
+    'spararna-accent': $backascout-spararna-accent,
+    'upptackarna': $backascout-upptackarna,
+    'upptackarna-light': $backascout-upptackarna-light,
+    'upptackarna-dark': $backascout-upptackarna-dark,
+    'upptackarna-accent': $backascout-upptackarna-accent,
+    'aventyrarna': $backascout-aventyrarna,
+    'aventyrarna-light': $backascout-aventyrarna-light,
+    'aventyrarna-dark': $backascout-aventyrarna-dark,
+    'aventyrarna-accent': $backascout-aventyrarna-accent,
+    'utmanarna': $backascout-utmanarna,
+    'utmanarna-light': $backascout-utmanarna-light,
+    'utmanarna-dark': $backascout-utmanarna-dark,
+    'utmanarna-accent': $backascout-utmanarna-accent,
+    'rover': $backascout-rover,
+    'rover-light': $backascout-rover-light,
+    'rover-dark': $backascout-rover-dark,
+    'rover-accent': $backascout-rover-accent,
+  ),
+  $colors
+);
+
+$extract: $colors;

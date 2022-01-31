@@ -1,0 +1,18 @@
+.backascout-image {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  &--scalable {
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

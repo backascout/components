@@ -1,0 +1,36 @@
+// Typography
+$typography: () !default;
+$font-weight: () !default;
+
+$backascout-typography-display-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$backascout-typography-default-font-stack: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+  sans-serif;
+
+$backascout-typography-weight-normal: normal;
+$backascout-typography-weight-medium: 500;
+$backascout-typography-weight-bold: bold;
+
+$typography: map-merge(
+  (
+    'display': $backascout-typography-display-font-stack,
+    'default': $backascout-typography-default-font-stack,
+  ),
+  $typography
+);
+
+$font-weight: (
+  display: (
+    'normal': $backascout-typography-weight-normal,
+  ),
+  default: (
+    'normal': $backascout-typography-weight-normal,
+    'medium': $backascout-typography-weight-medium,
+    'bold': $backascout-typography-weight-bold,
+  ),
+);
+
+$extract: (
+  'weight-normal': $backascout-typography-weight-normal,
+  'weight-medium': $backascout-typography-weight-medium,
+  'weight-bold': $backascout-typography-weight-bold,
+);

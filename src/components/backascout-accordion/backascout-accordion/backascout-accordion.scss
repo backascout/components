@@ -1,0 +1,72 @@
+@import 'borders/mixins';
+@import 'colors/mixins';
+@import 'spacing/variables';
+
+.backascout-accordion {
+  &__header {
+    padding: $backascout-spacing-8 $backascout-spacing-16;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--scouterna {
+      @include backascout-color('scouterna');
+    }
+
+    &--familjescouterna {
+      @include backascout-color('familjescouterna');
+    }
+
+    &--spararna {
+      @include backascout-color('spararna');
+    }
+
+    &--upptackarna {
+      @include backascout-color('upptackarna');
+    }
+
+    &--aventyrarna {
+      @include backascout-color('aventyrarna');
+    }
+
+    &--utmanarna {
+      @include backascout-color('utmanarna');
+    }
+
+    &--rover {
+      @include backascout-color('rover');
+    }
+  }
+
+  &__items {
+    @include backascout-border('black', sm, top);
+
+    &--scouterna {
+      @include backascout-border('scouterna', sm, top);
+    }
+
+    &--familjescouterna {
+      @include backascout-border('familjescouterna', sm, top);
+    }
+
+    &--spararna {
+      @include backascout-border('spararna', sm, top);
+    }
+
+    &--upptackarna {
+      @include backascout-border('upptackarna', sm, top);
+    }
+
+    &--aventyrarna {
+      @include backascout-border('aventyrarna', sm, top);
+    }
+
+    &--utmanarna {
+      @include backascout-border('utmanarna', sm, top);
+    }
+
+    &--rover {
+      @include backascout-border('rover', sm, top);
+    }
+  }
+}

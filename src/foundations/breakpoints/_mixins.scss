@@ -1,0 +1,13 @@
+@import 'variables';
+
+@mixin backascout-breakpoint($name) {
+  @if map_has_key($breakpoints, $name) {
+    $breakpoint: map-get($breakpoints, $name);
+
+    @media screen and (min-width: #{$breakpoint}) {
+      @content;
+    }
+  } @else {
+    @error 'Unknown breakpoint name "#{$name}" in mediaquery';
+  }
+}

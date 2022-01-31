@@ -1,0 +1,47 @@
+@import 'colors/mixins';
+@import 'borders/mixins';
+@import 'spacing/variables';
+
+.backascout-alert {
+  @include backascout-color('black');
+  padding: $backascout-spacing-12 $backascout-spacing-24;
+
+  &--default {
+    @include backascout-color('gray-900');
+    @include backascout-bg-color('gray-100');
+    @include backascout-border('gray-300', xl, left);
+  }
+
+  &--success {
+    @include backascout-color('green-900');
+    @include backascout-bg-color('green-100');
+    @include backascout-border('green-300', xl, left);
+  }
+
+  &--warning {
+    @include backascout-color('orange-900');
+    @include backascout-bg-color('orange-100');
+    @include backascout-border('orange-300', xl, left);
+  }
+
+  &--error {
+    @include backascout-color('red-900');
+    @include backascout-bg-color('red-100');
+    @include backascout-border('red-300', xl, left);
+  }
+
+  &--info {
+    @include backascout-color('blue-900');
+    @include backascout-bg-color('blue-100');
+    @include backascout-border('blue-300', xl, left);
+  }
+
+  &__container {
+    max-width: 100ch;
+  }
+
+  &__link {
+    margin-top: $backascout-spacing-12;
+    display: block;
+  }
+}

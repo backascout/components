@@ -1,0 +1,51 @@
+@import 'typography/mixins';
+
+:host {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  hyphens: auto;
+  margin: 0;
+}
+
+.title-100 {
+  @include backascout-title-100;
+}
+
+.title-200 {
+  @include backascout-title-200;
+}
+
+.title-300 {
+  @include backascout-title-300;
+}
+
+.title-400 {
+  @include backascout-title-400;
+}
+
+.title-500 {
+  @include backascout-title-500;
+}
+
+.title-600 {
+  @include backascout-title-600;
+}
+
+.title-700 {
+  @include backascout-title-700;
+}
+
+.title-800 {
+  @include backascout-title-800;
+}
+
+.title-900 {
+  @include backascout-title-900;
+}

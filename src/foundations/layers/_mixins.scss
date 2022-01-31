@@ -1,0 +1,31 @@
+@import 'variables';
+
+@mixin backascout-layer-below($layer) {
+  @if ($layer == 'auto') {
+    $layer: 0;
+  }
+  z-index: $layer - 1;
+}
+
+@mixin backascout-layer-above($layer) {
+  @if ($layer == 'auto') {
+    $layer: 0;
+  }
+  z-index: $layer + 1;
+}
+
+@mixin backascout-layer-base() {
+  z-index: $backascout-layer-base;
+}
+
+@mixin backascout-layer-dropdown() {
+  z-index: $backascout-layer-dropdown;
+}
+
+@mixin backascout-layer-header() {
+  z-index: $backascout-layer-header;
+}
+
+@mixin backascout-layer-modal() {
+  z-index: $backascout-layer-modal;
+}

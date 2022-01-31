@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'spacing/variables';
+@import 'borders/variables';
+@import 'borders/mixins';
+
+@mixin backascout-focus-shadow() {
+  box-shadow: 0 0 0 $backascout-focus-border-width $backascout-focus-color;
+}
+
+@mixin backascout-focus-outline() {
+  outline: solid $backascout-focus-border-width $backascout-focus-color;
+  outline-offset: 2px;
+}
+
+@mixin backascout-pseudo-element-focus-style($offset: $backascout-spacing-4, $radius: full) {
+  @include backascout-border-radius($radius);
+  @include backascout-focus-shadow();
+  bottom: -$offset;
+  content: '';
+  display: block;
+  left: -$offset;
+  position: absolute;
+  right: -$offset;
+  top: -$offset;
+}

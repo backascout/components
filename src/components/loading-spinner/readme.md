@@ -9,7 +9,7 @@
 
 ### Used by
 
- - [covid-posts](../covid-posts)
+ - [covid-posts](../covid-posts/covid-posts)
 
 ### Graph
 ```mermaid
