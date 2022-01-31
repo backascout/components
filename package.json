@@ -1,6 +1,6 @@
 {
   "name": "@backascout/components",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Webcomponents created by Backa Scoutkår, for use on Kårwebben",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
