@@ -1,11 +1,12 @@
 @import 'borders/mixins';
 @import 'colors/mixins';
 @import 'motion/variables';
+@import 'spacing/variables';
 
 .backascout-loader {
-  width: 96px;
-  height: 96px;
-  background-size: 48px;
+  width: $backascout-spacing-96;
+  height: $backascout-spacing-96;
+  background-size: $backascout-spacing-48;
   background-repeat: no-repeat;
   background-position: center;
   animation: loader-logo-pulse $backascout-duration-1000 infinite alternate $backascout-ease-in-out;
@@ -15,8 +16,8 @@
     @include backascout-border-radius('full');
     content: '';
     display: block;
-    width: 96px;
-    height: 96px;
+    width: $backascout-spacing-96;
+    height: $backascout-spacing-96;
     animation: loader-pulse $backascout-duration-1000 infinite alternate $backascout-ease-out;
   }
 }

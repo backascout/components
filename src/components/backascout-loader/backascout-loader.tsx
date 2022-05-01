@@ -13,12 +13,7 @@ export class BackascoutLoader {
 
     return (
       <Host>
-        <div
-          class="backascout-loader"
-          style={{ backgroundImage }}
-        >
-          {/* <img src={lily} alt="Scoutlilja" class="backascout-loader__lily" /> */}
-        </div>
+        <div class="backascout-loader" style={{ backgroundImage }} />
       </Host>
     );
   }
