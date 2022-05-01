@@ -1,6 +1,6 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 import { GetAttributeType } from '../../types/GetAttributeType';
-import { LinkColor, LinkColorType } from '../../types/LinkColor';
+import { LinkColorType } from '../../types/LinkColor';
 import { LinkVariant, LinkVariantType } from '../../types/LinkVariant';
 
 @Component({
