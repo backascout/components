@@ -13,6 +13,7 @@ import { HTagType } from "./types/HTag";
 import { HeadingVariantType } from "./types/HeadingVariant";
 import { GetAttributeType } from "./types/GetAttributeType";
 import { ImageVariantType } from "./types/ImageVariant";
+import { LinkColorType } from "./types/LinkColor";
 import { LinkVariantType } from "./types/LinkVariant";
 import { ParagraphVariantType } from "./types/ParagraphVariant";
 export namespace Components {
@@ -102,6 +103,8 @@ export namespace Components {
         "variant"?: ImageVariantType;
     }
     interface BackascoutLink {
+        "color"?: LinkColorType;
+        "disableVisited": boolean;
         /**
           * Native download attribute of anchor element
          */
@@ -114,6 +117,9 @@ export namespace Components {
           * Native referrerPolicy attribute of anchor element
          */
         "referrerPolicy"?: ReferrerPolicy;
+        /**
+          * Native rel attribute of anchor element
+         */
         "rel"?: GetAttributeType<'a', 'rel'>;
         /**
           * A silent link is intended to wrap an element to make it a link but not add any styling except for the pointer cursor and focus style.
@@ -418,6 +424,8 @@ declare namespace LocalJSX {
         "variant"?: ImageVariantType;
     }
     interface BackascoutLink {
+        "color"?: LinkColorType;
+        "disableVisited"?: boolean;
         /**
           * Native download attribute of anchor element
          */
@@ -430,6 +438,9 @@ declare namespace LocalJSX {
           * Native referrerPolicy attribute of anchor element
          */
         "referrerPolicy"?: ReferrerPolicy;
+        /**
+          * Native rel attribute of anchor element
+         */
         "rel"?: GetAttributeType<'a', 'rel'>;
         /**
           * A silent link is intended to wrap an element to make it a link but not add any styling except for the pointer cursor and focus style.

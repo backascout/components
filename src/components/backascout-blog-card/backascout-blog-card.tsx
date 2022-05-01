@@ -17,7 +17,12 @@ export class BackascoutBlogCard {
     return (
       <Host>
         <article class="backascout-blog-card">
-          <backascout-link href={this.href} silent class="backascout-blog-card__link">
+          <backascout-link
+            href={this.href}
+            silent
+            class="backascout-blog-card__link"
+            disable-visited
+          >
             <div class="backascout-blog-card__wrapper">
               {this.badge && (
                 <div

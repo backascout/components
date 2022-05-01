@@ -9,6 +9,25 @@
   display: flex;
 }
 
+@mixin backascout-link-color($color) {
+  &:not(&--disable-visited) {
+    &:visited {
+      @include backascout-color('#{$color}-800');
+      @include backascout-bg-color('transparent');
+    }
+
+    &:hover {
+      @include backascout-color('#{$color}-900');
+      @include backascout-bg-color('#{$color}-200');
+    }
+
+    &:active {
+      @include backascout-color('#{$color}-900');
+      @include backascout-bg-color('#{$color}-200');
+    }
+  }
+}
+
 .backascout-link {
   @include backascout-border-radius('default');
   color: inherit;
@@ -16,20 +35,26 @@
   text-decoration: underline;
   transition: color $backascout-duration-100 $backascout-ease-in-out,
     background-color $backascout-duration-100 $backascout-ease-in-out;
+  @include backascout-link-color('blue');
 
-  &:visited {
-    @include backascout-color('blue-800');
-    @include backascout-bg-color('transparent');
+  &--default {
+    @include backascout-link-color('gray');
   }
 
-  &:hover {
-    @include backascout-color('blue-700');
-    @include backascout-bg-color('blue-200');
+  &--success {
+    @include backascout-link-color('green');
   }
 
-  &:active {
-    @include backascout-color('blue-800');
-    @include backascout-bg-color('blue-200');
+  &--warning {
+    @include backascout-link-color('orange');
+  }
+
+  &--error {
+    @include backascout-link-color('red');
+  }
+
+  &--info {
+    @include backascout-link-color('blue');
   }
 
   &:focus {

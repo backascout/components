@@ -30,7 +30,9 @@ export class BackascoutAlert {
               {this.linkHref && this.linkText && (
                 <div class="backascout-alert__link">
                   <backascout-p>
-                    <backascout-link href={this.linkHref}>{this.linkText}</backascout-link>
+                    <backascout-link href={this.linkHref} color={this.variant}>
+                      {this.linkText}
+                    </backascout-link>
                   </backascout-p>
                 </div>
               )}
